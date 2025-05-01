@@ -14,6 +14,27 @@ create table
     FOREIGN KEY (primary_mime_id) REFERENCES mime_types_primary (id) ON DELETE CASCADE
 );
 
+INSERT INTO
+  mime_types_primary (id, type_name)
+VALUES
+  (0, 'unknown'),
+  (1, 'application'),
+  (2, 'audio'),
+  (3, 'example'),
+  (4, 'image'),
+  (5, 'message'),
+  (6, 'model'),
+  (7, 'multipart'),
+  (8, 'text'),
+  (9, 'video'),
+  (10, 'vnd'),
+  (11, 'x'),
+  (12, 'x-pkcs'),
+  (13, 'chemical'),
+  (14, 'font'),
+  (15, 'x-conference'),
+  (16, 'x-shader');
+
 INSERT INTO mime_types_secondary (primary_mime_id, type_name, extension, compressible) VALUES (1, 'application/1d-interleaved-parityfec', NULL, NULL);
 INSERT INTO mime_types_secondary (primary_mime_id, type_name, extension, compressible) VALUES (1, 'application/3gpdash-qoe-report+xml', NULL, 'True');
 INSERT INTO mime_types_secondary (primary_mime_id, type_name, extension, compressible) VALUES (1, 'application/3gpp-ims+xml', NULL, 'True');
